@@ -1,0 +1,273 @@
+/* 🌌 Background Night Sky */
+.background {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 1px, transparent 2px),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12) 1px, transparent 2px),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.1) 1px, transparent 2px),
+    radial-gradient(circle at 10% 80%, rgba(255,255,255,0.14) 1px, transparent 2px),
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.13) 1px, transparent 2px),
+    linear-gradient(
+      160deg,
+      #120c2c 0%,
+      #1b1240 40%,
+      #24155a 70%,
+      #2c1a6e 100%
+    );
+
+  background-size:
+    300px 300px,
+    400px 400px,
+    500px 500px,
+    350px 350px,
+    450px 450px,
+    cover;
+}
+
+/* 🌙 Overlay for small stars/moons */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+
+  background:
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.15) 6px, transparent 12px),
+    radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.12) 5px, transparent 10px),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.18) 4px, transparent 8px),
+    radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.1) 3px, transparent 6px),
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.08) 3px, transparent 6px);
+}
+
+/* 🌙 Crescent Moon #1 */
+.crescentMoon1 {
+  position: absolute;
+  top: 15%;
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(220, 200, 255, 0.18);
+  box-shadow: 0 0 14px 3px rgba(203, 185, 235, 0.1);
+  filter: blur(3px);
+  z-index: 2;
+}
+.crescentMoon1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(35, 27, 60, 0.511); /* tuned for background at top-right */
+  filter: blur(3px);
+}
+
+/* 🌙 Crescent Moon #2 */
+.crescentMoon2 {
+  position: absolute;
+  top: 60%;
+  left: 25%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(210, 190, 255, 0.18); /* slightly warmer */
+  box-shadow: 0 0 14px 3px rgba(210, 190, 255, 0.1);
+  filter: blur(3px);
+  z-index: 2;
+}
+.crescentMoon2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(35, 28, 65, 0.85); /* tuned for bottom-left */
+  filter: blur(3px);
+}
+
+/* 🌙 Crescent Moon #3 */
+.crescentMoon3 {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(220, 200, 255, 0.18); /* perfect soft color */
+  box-shadow: 0 0 14px 3px rgba(220, 200, 255, 0.1);
+  filter: blur(3px);
+  z-index: 2;
+}
+.crescentMoon3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(30, 20, 60, 0.85); /* perfect shadow for that spot */
+  filter: blur(3px);
+}
+
+/* 🌙 Crescent Moon #4 */
+.crescentMoon4 {
+  position: absolute;
+  top: 75%;
+  left: 80%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: rgba(200, 182, 217, 0.18); /* tuned for bottom-right */
+  box-shadow: 0 0 14px 3px rgba(185, 167, 203, 0.1);
+  filter: blur(3px);
+  z-index: 2;
+}
+.crescentMoon4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(46, 34, 93, 0.64); /* shadow matches background */
+  filter: blur(3px);
+}
+
+/* 🟣 Post Card */
+.card {
+  width: 100%;
+  max-width: 900px;
+  padding: 3rem;
+  border-radius: 25px;
+  background: rgba(30, 20, 60, 0.65);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 50px rgba(120, 90, 255, 0.2),
+    0 15px 40px rgba(0, 0, 0, 0.6);
+  color: #e8e6ff;
+  position: relative;
+  z-index: 3;
+}
+
+/* Title */
+.title { text-align: center; margin-bottom: 1rem; font-weight: 500; }
+
+/* Day + feeling */
+.meta { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; color: #c9baff; }
+
+/* Content text */
+.content {
+  white-space: pre-wrap;
+  /* optional for nicer formatting */
+  word-wrap: break-word;
+  line-height: 1.5;
+}
+
+/* Navigation Arrows */
+.navigation { display: flex; justify-content: space-between; margin-bottom: 2rem; }
+.navButton {
+  background: rgba(120,90,255,0.8);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.25s;
+}
+.navButton:hover { background: rgba(150,120,255,0.9); }
+
+/* Food sections */
+.foodSection { text-align: center; }
+
+/* Titles */
+.sectionTitle { margin-bottom: 0.5rem; color: #d8d4ff; font-weight: 500; }
+
+/* Images container */
+.imagesRow {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* aligns all images in a straight line */
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* Wrapper for blur reveal */
+.imageWrapper { position: relative; display: inline-block; }
+
+/* Images */
+.foodImage {
+  width: 240px;       /* slightly bigger */
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.5),
+    0 0 25px rgba(120, 90, 255, 0.25);
+  transition: 0.4s ease, filter 0.6s ease;
+}
+
+/* iMessage style hidden */
+.hiddenImage { filter: blur(30px) brightness(0.8) saturate(140%); background: rgba(120,90,255,0.35); }
+
+/* Reveal Button */
+.revealButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(120, 90, 255, 0.85);
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  transition: 0.25s;
+}
+.revealButton:hover { background: rgba(150,120,255,0.9); }
+
+/* Navigation container below images */
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Navigation buttons */
+.navButton {
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #6d4cff, #8b6cff);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.navButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(120, 90, 255, 0.4);
+}
+

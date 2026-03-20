@@ -1,0 +1,79 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  height: 70px;
+  padding: 0 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Let page background show through */
+  background: transparent;
+
+  backdrop-filter: blur(6px);
+
+  /* very subtle separation */
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* 🌙 Left Section */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 🌙 Crescent Logo */
+.logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  background: radial-gradient(circle at 30% 30%, #e6e1ff, #a78bfa);
+
+  position: relative;
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 10px;
+
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+
+  /* Match your main page background color */
+  background: #1b1240;
+}
+
+/* Title */
+.title {
+  color: #e8e6ff;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Nav Links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #d8d4ff;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #ffffff;
+}
